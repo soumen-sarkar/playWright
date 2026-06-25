@@ -4,7 +4,7 @@ on:
     branches: [ master ]
     paths-ignore:
       - 'README.md'
-      - '.github/workflows/first-action.yml'
+      - '.github/workflows/firstWorkflow.yml'
 jobs:
   Dependencys Installation:
     timeout-minutes: 60
@@ -20,6 +20,7 @@ jobs:
       run: npm ci
   Test:
     needs: Dependencys Installation
+    runs-on: ubuntu-latest
     steps:
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
