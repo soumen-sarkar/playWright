@@ -6,7 +6,7 @@ on:
       - 'README.md'
       - '.github/workflows/firstWorkflow.yml'
 jobs:
-  Dependencys-Installation:
+  Dependencies-Installation:
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -19,7 +19,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
   Test:
-    needs: Dependencys-Installation
+    needs: Dependencies-Installation
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
