@@ -4,7 +4,7 @@ on:
     branches: [ master ]
     paths-ignore:
       - 'README.md'
-      - '.github/workflows/firstWorkflow.yml'
+      # - '.github/workflows/firstWorkflow.yml'
 jobs:
   Dependencies-Installation:
     timeout-minutes: 60
@@ -16,7 +16,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: lts/*
-    - Cache: Node.js modules
+    - name: Cache dependencies
       uses: actions/cache@v3
       with:
         path: ~/.npm
@@ -33,7 +33,7 @@ jobs:
       uses: actions/setup-node@v4
       with:
         node-version: lts/*
-    - Cache: Node.js modules
+    - name: Cache dependencies
       uses: actions/cache@v3
       with:
         path: ~/.npm
