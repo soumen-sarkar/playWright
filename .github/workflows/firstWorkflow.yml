@@ -19,6 +19,7 @@ jobs:
     - name: Install dependencies
       run: npm ci
   Application-Build:
+    needs: Dependencies-Installation
     runs-on: ubuntu-latest
     steps:
     - name: Checkout repository
@@ -34,8 +35,8 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
       with:
-        name: Resources
-        path: Resources
+        name: dist
+        path: dist
   # Test:
   #   needs: [Dependencies-Installation, Application-Build]
   #   runs-on: ubuntu-latest
