@@ -12,7 +12,7 @@ import { SeoService } from './@core/utils/seo.service';
   template: '<router-outlet></router-outlet>',
 })
 export class AppComponent implements OnInit {
-  // Add
+  // Add a
   constructor(private analytics: AnalyticsService, private seoService: SeoService) {
   }
 
