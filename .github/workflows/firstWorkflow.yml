@@ -42,14 +42,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Get build artifacts
-      uses: actions/download-artifact@v4
+      uses: actions/download-artifact@v3
       with:
         name: dist
     - name: Output build artifacts
-      run: ls -R dist
-      run: |
-        # Add your deployment commands here
-        echo "Deploying application..."
+      run: ls
+    - name: Deploy application
+      run: echo "Deploying application..."
   # Test:
   #   needs: [Dependencies-Installation, Application-Build]
   #   runs-on: ubuntu-latest
